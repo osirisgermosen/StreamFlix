@@ -1,0 +1,49 @@
+@model IEnumerable<MovieMvcProject.Models.Movie>;
+
+@{
+    ViewData["Title"] = "Movie List";
+}
+<h1>Movie List</h1>
+<form asp-asp-controller="Movies" asp-action="Index">
+    <div class="row">
+        <div class="col">
+            <input type="text" placeholder="Search..." name="search" class="form-control">
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Search</button>
+            <a asp-action="Create" asp-controller="Movies" class="btn btn-outline-warning">Create Movie</a>
+        </div>
+    </div>
+</form>
+<table class="table">
+    <tr>
+        <thead>
+            <th>@Html.DisplayNameFor(mode => mode.Id)</th>
+            <th>@Html.DisplayNameFor(mode => mode.Title)</th>
+            <th>@Html.DisplayNameFor(mode => mode.ReleaseDate)</th>
+            <th>@Html.DisplayNameFor(mode => mode.Genre)</th>
+            <th>@Html.DisplayNameFor(mode => mode.Year)</th>
+            <th>@Html.DisplayNameFor(mode => mode.Price)</th>
+            <th>Actions</th>
+        </thead>
+    </tr>
+    @foreach (var movie in Model)
+    {
+        <tr>
+            <tbody>
+                <td>@Html.DisplayFor(m => movie.Id)</td>
+                <td>@Html.DisplayFor(m => movie.Title)</td>
+                <td>@Html.DisplayFor(m => movie.ReleaseDate)</td>
+                <td>@Html.DisplayFor(m => movie.Genre)</td>
+                <td>@Html.DisplayFor(m => movie.Year)</td>
+                <td>@Html.DisplayFor(m => movie.Price)</td>
+                <td>
+                    <a asp-controller="Movies" asp-action="Details" asp-route-id="@movie.Id">Details</a>
+                    <a asp-controller="Movies" asp-action="Edit" asp-route-id="@movie.Id">Edit</a>
+                    <a asp-controller="Movies" asp-action="Delete">Delete</a>
+                </td>
+            </tbody>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,35 @@
+@model MovieMvcProject.Models.Movie;
+
+@{
+    ViewData["Title"] = "Movie Details";
+}
+<h1>Movie Details</h1>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <td>@Html.DisplayFor(model => model.Id)</td>
+    </tr>
+    <tr>
+        <th>Title</th>
+        <td>@Html.DisplayFor(model => model.Title)</td>
+    </tr>
+    <tr>
+        <th>Release</th>
+        <td>@Html.DisplayFor(model => model.ReleaseDate)</td>
+    </tr>
+    <tr>
+        <th>Genre</th>
+        <td>@Html.DisplayFor(model => model.Genre)</td>
+    </tr>
+    <tr>
+        <th>Year</th>
+        <td>@Html.DisplayFor(model => model.Year)</td>
+    </tr>
+    <tr>
+        <th>Price</th>
+        <td>@Html.DisplayFor(model => model.Price)</td>
+    </tr>
+</table>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+<a asp-action="Index" class="btn btn-primary">Back</a>
