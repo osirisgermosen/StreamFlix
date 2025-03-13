@@ -1,0 +1,14 @@
+@model MovieMvcProject.Models.Movie;
+
+@{
+    ViewData["Title"] = "Delete Movie";
+}
+<h2>Delete Movie</h2>
+
+<p class="mt-4 mb-4 fs-4">¿ Desea eliminar la pelicula <b>@Model.Title</b>?</p>
+
+<form asp-controller="Movies" asp-action="Delete">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <a asp-controller="Movies" asp-action="Index" class="btn btn-primary">Back</a>
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>

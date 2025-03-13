@@ -85,5 +85,28 @@ namespace MovieMvcProject.Controllers
             return View(movie);
         }
 
+        [HttpPost]
+        public ActionResult Delete(Movie movie)
+        {
+            var _movie = _movieService.GetMovieById(movie.Id);
+
+            if (_movie == null)
+                return NotFound();
+
+            _movieService.Delete(_movie.Id);
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var movie = _movieService.GetMovieById(id);
+
+            if (movie == null)
+                return NotFound();
+
+            return View(movie);
+        }
+
     }
 }

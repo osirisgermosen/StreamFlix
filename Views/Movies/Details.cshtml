@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Movie Details";
 }
-<h1>Movie Details</h1>
+<h2>Movie Details</h2>
 
 <table class="table">
     <tr>
@@ -31,5 +31,5 @@
         <td>@Html.DisplayFor(model => model.Price)</td>
     </tr>
 </table>
-<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
 <a asp-action="Index" class="btn btn-primary">Back</a>
+<a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>

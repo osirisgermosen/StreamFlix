@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Movie List";
 }
-<h1>Movie List</h1>
+<h2>Movie List</h2>
 <form asp-asp-controller="Movies" asp-action="Index">
     <div class="row">
         <div class="col">
@@ -40,7 +40,7 @@
                 <td>
                     <a asp-controller="Movies" asp-action="Details" asp-route-id="@movie.Id">Details</a>
                     <a asp-controller="Movies" asp-action="Edit" asp-route-id="@movie.Id">Edit</a>
-                    <a asp-controller="Movies" asp-action="Delete">Delete</a>
+                    <a asp-controller="Movies" asp-action="Delete" asp-route-id="@movie.Id">Delete</a>
                 </td>
             </tbody>
         </tr>
